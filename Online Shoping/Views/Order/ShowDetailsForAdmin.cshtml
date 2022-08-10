@@ -1,0 +1,24 @@
+﻿@model List<OrderDetails>
+@{
+    ViewData["Title"] = "ShowDetailsForAdmin";
+}
+<table class="table table-hover table-bordered">
+<tr>
+<td>@ViewBag.Order.Address</td>
+<td>@ViewBag.Order.City</td>
+<td>@ViewBag.Order.date</td>
+<td>@ViewBag.Order.PaymentType</td>
+<td>@ViewBag.Order.TotalPrice</td>
+</tr>
+</table>
+<table class="table table-hover table-bordered">
+    
+   @foreach(var item in Model)
+{
+	<tr>
+		<td>@item.product.name</td>
+	    <td>@item.product.price</td>
+	   <td>@item.quantity</td>
+	</tr>
+}
+    </table>

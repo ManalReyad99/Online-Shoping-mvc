@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Create</h1>
+<form asp-action="Create">
+    <label>Role</label>
+    <input type="text" required name="rolename" class="form-control" value="@ViewBag.role"/>
+    <input type="submit" value="Create" />
+</form>
+<div>
+    @if (ViewBag.errors != null)
+    {
+       @foreach (var item in ViewBag.errors)
+         {
+            <div>@item.Description</div>
+         }
+    }
+</div>

@@ -1,0 +1,25 @@
+﻿
+@model List<Order>
+
+<h1>ShowOrders</h1>
+<table class="table table-hover table-bordered ">
+	<tr>
+		<td>Address</td>
+	    <td>City</td>
+	   <td>Date</td>
+	   <td>PaymentType</td>
+	   <td>TotalPrice</td>
+       <td>Show Details</td>
+	</tr>
+@foreach(var item in Model)
+{
+	<tr>
+		<td>@item.Address</td>
+	    <td>@item.City</td>
+	   <td>@item.date</td>
+	   <td>@item.PaymentType</td>
+	   <td>@item.TotalPrice</td>
+       <td><a href="/Order/ShowDetailsForAdmin/@item.Id" class="btn btn-success">Show Details</a></td>
+	</tr>
+}
+</table>
